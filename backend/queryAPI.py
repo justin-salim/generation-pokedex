@@ -1,4 +1,8 @@
-import requests
+from fastapi import FastAPI
 
-response = requests.get("https://pokeapi.co/api/v2/pokemon/charmander/") 
-print(response.status_code)
+app = FastAPI()
+
+
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
